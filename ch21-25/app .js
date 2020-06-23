@@ -103,33 +103,29 @@ else if(bakeryItems[i]!== a){
 }
 
 //Question#15
-// var password= prompt("Enter your password");
-// document.write("Entered Password is: " + " " + password + "<br>");
-// for(var i=0; i<password.length; i++){
-//     if(password.charAt(i) ==[/a-z/g] && password.charAt(i) ==[/A-Z/g] && password.charAt(i) ==[/0-9/g] )
-//     {
-//            if(password.charAt(0)!=[0-9])
-//         {
-//                if(password[i].length>=6){
-//                document.write("Your password is correct"); 
-//             }
-//             else{
-//                 document.write("Your password must be have atleast 6 character");
-//                 break;
-//             }
-//         }
-//             else{
-//                 document.write("You have entered a number at beginning...Try Again");
-//                 break;
-//             }
-           
-//     }
-//     else{
-//         document.write("Your password has no alphabet or number... Try Again");
-//         break;
-//     }
-// }
+var x = 0;
+var password = prompt("Enter your password");
+document.write("Entered Password is: "+password+"<br>");
+    
 
+if( password.charAt(0) >= '0' && password.charAt(0) <='9')
+      { document.write("Password can not begin with a number<br>"); }
+if(password.length <6 )
+      { document.write("Password must be atleast 6 characters long<br>"); }
+else{ 
+    for(var i=0; i<password.length; i++){
+    {
+if( password.charAt(i) >= 'A' && password.charAt(i) <= 'Z')
+   { x++; }
+ if(password.charAt(i) >= 'a' && password.charAt(i) <= 'z') 
+   { x++;}
+if (password.charAt(i) >= '0' && password.charAt(i) <= '9')
+  {x++;}
+     }
+  }
+  if(x == password.length)
+  document.write("Your password satisfies all the validations!<br>");
+}
 
 
 
